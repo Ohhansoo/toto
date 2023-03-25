@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id("org.springframework.boot") version "3.0.3"
+    id("io.spring.dependency-management") version "1.1.0"
+    id("org.hidetake.ssh") version "2.2.0"
+}
+
+group = "com.sping"
+version = "0.0.1-SNAPSHOT"
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+//각종 의존성(라이브러리)들을 어떤 원격 저장소에서 받을지 결정
+//주로 mavenCentral을 많이 사용하지만 요샌 라이브러리 업로드 난이도 때문에 jcenter도 많이 사용 -> 지금은 중단
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
