@@ -10,8 +10,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 //CTRL + SHIFT + T를 누르면 테스트코드 생성
 /*
@@ -65,4 +64,20 @@ class HelloControllerTest {
                 .andExpect(content().string(hello));
     }
 
+    @Test
+    public void helloDto가_리턴된다() throws Exception {
+        String name = "hello";
+        int amount = 1000;
+
+/*        mvc.perform(
+                get("/hello/dto")
+                //값은 string만 허용되며 숫자,날짜 등의 데이터도 문자열로 변경해야만 가능
+                .param("name", name)
+                .param("amount", String.valueOf(amount))
+            ).andExpect(status().isOk())
+                        //json 응답값을 필드별로 검증할 수 있는 메소드
+                        //$를 기준으로 필드명을 명시
+            .andExpect(jsonPath("$.name", is(name)))
+                .andExpect(jsonPath("$.amount", is(amount)));*/
+    }
 }
