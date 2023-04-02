@@ -21,6 +21,11 @@ Extention 사용을 위한 어노테이션(ex BeforAllCallback 등 lifecycle cal
  - SpringBootTest 없이 가볍게 테스트 하고 싶을 때는 MockitoExtension, 일반적인 경우는 SpringExtents
  - 참고 링크 : https://stackoverflow.com/questions/60308578/what-is-the-difference-between-extendwithspringextension-class-and-extendwit
  */
+/*
+* Extention : JUnit 확장 모델으로 확장에 사용할 클래스를 정의하고 ExtendWith의 매개변수에 넣어 확장한다.
+* @RegisterExtention을 통해 커스터마이징 가능
+* 상세 : https://huisam.tistory.com/entry/junit
+* */
 @ExtendWith(SpringExtension.class)
 /*
 @AutoConfigureMockMvc
